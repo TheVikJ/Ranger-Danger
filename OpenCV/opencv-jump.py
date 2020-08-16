@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 from datetime import datetime, timedelta
+import time
 from pynput.keyboard import Key, Controller
 
 keyboard = Controller()
@@ -11,8 +12,9 @@ def jump():
     if datetime.now() > delay:
         # Add code for the jump function here
         print("jump")
-        keyboard.press(Key.space)
-        keyboard.release(Key.space)
+        keyboard.press(Key.up)
+        time.sleep(0.1)
+        keyboard.release(Key.up)
         delay = datetime.now() + timedelta(seconds=0.5)
         # A delay of 0.5 seconds is added between jumps
     
